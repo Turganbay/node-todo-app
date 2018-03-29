@@ -1,11 +1,10 @@
 var mongoose = require('mongoose');
 
-const mongoURL = process.env.PORT === 3000 ? 
-    'mongodb://localhost:27017/TodoApp' : 
-    'mongodb://<dbuser>:<dbpassword>@ds227469.mlab.com:27469/todo-app';
+const mongoLocalURL = 'mongodb://localhost:27017/TodoApp';
+const mongoMLabUrl = 'mongodb://turganbay:turboturbo92@ds227469.mlab.com:27469/todo-app';
 
 mongoose.Promise = global.Promise;
-mongoose.connect(mongoURL);
+mongoose.connect(mongoMLabUrl);
 
 module.exports = {
     mongoose: mongoose
